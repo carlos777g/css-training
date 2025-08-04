@@ -26,9 +26,7 @@ nav h1 {
 .underline {
   text-decoration: underline;
 }
-
 /* #endregion */
-
 /* #region Cards */
 .container {
   width: 100%;
@@ -53,7 +51,6 @@ img {
   text-decoration-style: wavy;
 }
 /* #endregion */
-
 /* #region LastText */
 .last-text {
   font-size: 30px;
@@ -61,15 +58,20 @@ img {
   margin-left: 10%;
 }
 
-.paddin-top {
-  /* padding-top:  40px; */
-}
 .underline-2 {
   display: inline;
   border-bottom: 1px solid black;
 }
 /* #endregion */
-
 /* #region footer */
+footer {
+  margin: 70px 0 50px 0;
+  font-size: 18px;
+  margin-left: 10%;
+}
 
+footer > p {
+  line-height: 1;
+  margin: 0;
+}
 /* #endregion */
