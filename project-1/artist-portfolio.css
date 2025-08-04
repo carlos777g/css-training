@@ -53,3 +53,23 @@ img {
   text-decoration-style: wavy;
 }
 /* #endregion */
+
+/* #region LastText */
+.last-text {
+  font-size: 30px;
+  width: 35%;
+  margin-left: 10%;
+}
+
+.paddin-top {
+  /* padding-top:  40px; */
+}
+.underline-2 {
+  display: inline;
+  border-bottom: 1px solid black;
+}
+/* #endregion */
+
+/* #region footer */
+
+/* #endregion */
