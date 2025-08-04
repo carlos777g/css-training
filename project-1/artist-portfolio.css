@@ -26,6 +26,17 @@ nav h1 {
 .underline {
   text-decoration: underline;
 }
+
+a {
+  text-decoration-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(86, 22, 22);
+  transition: 0.3s;
+}
 /* #endregion */
 /* #region Cards */
 .container {
