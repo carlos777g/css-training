@@ -1,0 +1,15 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+}
+/* #region Principal */
+.principal {
+  background-color: blueviolet;
+  width: 100%;
+  color: aliceblue;
+  height: 100vh;
+}
+
+/* #endregion */
