@@ -37,6 +37,7 @@ h1 {
 .container {
   width: 42%;
   margin: 0 auto;
+  min-width: 300px;
 }
 
 p {
