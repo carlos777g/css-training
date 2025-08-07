@@ -396,3 +396,23 @@ a > p {
   top: calc(50% - 50px);
 }
 /* #endregion */
+/* #region1 Exercise Seventh */
+.sidebar {
+  background-color: red;
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 1000;
+}
+
+.sidebar > button {
+  position: absolute;
+  right: 0;
+  background-color: rgba(255, 255, 255, 1);;
+  color: #000;
+}
+.siderbar > button:hover{
+  background-color: rgba(62, 61, 61, 0.5);
+}
+/* #endregion */
