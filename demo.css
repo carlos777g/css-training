@@ -490,3 +490,18 @@ a > p {
   height: 50px;
 }
 /* #endregion */
+
+.container-flex-two {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-flex-two > p {
+  background-color: antiquewhite;
+  width: 70%;
+}
+
+.sidebar {
+  background-color: #f9b;
+  width: 100px;
+}
