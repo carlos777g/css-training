@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(233, 223, 255);
+  font-family: "Poppins", sans-serif;
+  color: rgb(83, 49, 156);
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem;
+}
+
+.card-cost {
+  background-color: white;
+  border-radius: 20px;
+  width: 50%;
+  margin: 3rem auto;
+  min-width: 700px;
+  max-width: 900px;
+}
+/* #region Header */
+.line-nav {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+}
+
+nav {
+  margin: 0 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+nav > a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(82, 22, 138, 0.6);
+  font-weight: bold;
+  padding: 1.7rem 2rem;
+}
+
+nav > a:hover {
+  color: rgba(82, 22, 138, 1);
+}
+
+#team {
+  color: rgba(82, 22, 138, 1);
+  /* border-bottom: 4px solid rgba(82, 22, 138, 1); */
+  /* border-radius: 3px; */
+}
+
+#team::before {
+  content: "";
+  width: 20%;
+  height: 6px;
+  background-color: purple;
+  position: absolute;
+  bottom: -4px;
+  z-index: 1;
+  left: 10rem;
+  border-radius: 10px;
+}
+/* #endregion */
+/* #region Montly Sessions */
+img {
+  width: 50px;
+  height: 50px;
+  margin: 0 1rem;
+}
+
+.mobile-web {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  align-items: center;
+}
+
+.selector {
+  background-color: rgba(82, 22, 138, 0.9);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 4px 5px;
+  border-radius: 15px;
+  width: 160px;
+}
+.selector > p {
+  padding: 0 10px;
+}
+#web {
+  background-color: white;
+  color: rgba(82, 22, 138, 0.9);
+  border-radius: 15px;
+  padding: 0 1rem;
+}
+
+.montly-sessions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.montly-sessions p {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.number-montly-sessions {
+  background-color: rgb(250, 247, 255);
+  width: 50%;
+  border-radius: 7px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.7rem 2rem;
+  margin-bottom: 2.8rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+.number-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bar {
+  width: 100%;
+  border: 2px solid rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  height: 20px;
+  background: linear-gradient(
+    to right,
+    black 0%,
+    rgb(82, 22, 138) 29%,
+    white 29%
+  );
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.circle-bar {
+  border-radius: 50%;
+  background-color: rgb(82, 22, 138);
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border: 1px solid white;
+  top: -5px;
+  left: 27%;
+  transition: 300ms transform;
+}
+
+.circle-bar:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.amount > p {
+  color: rgba(128, 128, 128, 0.6);
+  font-weight: bold;
+}
+/* #endregion */
+/* #region Cards */
+.cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 5rem;
+}
+
+.card {
+  background-color: rgba(234, 211, 239, 0.4);
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 3rem;
+  text-align: center;
+  position: relative;
+  border-radius: 11px;
+  box-shadow: 2px 1px 13px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: 300ms transform;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.save-up {
+  background: linear-gradient(to right, black 0%, rgb(82, 22, 138));
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  width: 100%;
+  border-radius: 11px 11px 0 0;
+  color: white;
+}
+
+h3 {
+  color: black;
+  font-size: 2rem;
+}
+
+.line {
+  width: 6rem;
+  height: 2px;
+  background-color: rgba(127, 127, 127, 0.4);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: rgba(82, 22, 138, 0.9);
+  padding: 15px 15px;
+  margin-top: 1rem;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  transition: 150ms transform ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+/* #endregion */
+
+/* #region Media Querys */
+@media only screen and (max-width: 700px) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 5rem;
+    flex-direction: column;
+  }
+}
+/* @endregion */
