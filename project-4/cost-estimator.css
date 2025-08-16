@@ -257,7 +257,8 @@ button:hover {
   .cards {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    flex-wrap: wrap-reverse;
     padding: 2rem 5rem;
     flex-direction: column;
   }

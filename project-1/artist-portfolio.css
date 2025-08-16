@@ -48,7 +48,7 @@ a:hover {
 
 .card {
   width: 48%;
-  margin: 0 1%;
+  margin: 0%;
   display: inline-block;
   font-size: 15px;
 }
@@ -56,7 +56,8 @@ a:hover {
 img {
   width: 100%;
   height: 500px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .donw {
@@ -86,4 +87,20 @@ footer > p {
   line-height: 1;
   margin: 0;
 }
+
 /* #endregion */
+
+@media only screen and (max-width: 1280px) {
+  body {
+    padding: 35px 0;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 4rem;
+  }
+}
