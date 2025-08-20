@@ -82,9 +82,9 @@ span {
 
 /* #region Media Querys Project One */
 @media only screen and (max-width: 1433px) {
-.container-two {
-  width: 800px;
-}
+  .container-two {
+    width: 800px;
+  }
 }
 /* #endregion */
 /* #endregion */
@@ -541,4 +541,64 @@ Give the h1 the following font sizes:
 - for screen sizes between 800 and 1000 pixels: 5rem
 - for screen sizes above 1000 pixels: 7rem
 */
+/* #endregion */
+/* #region Animations */
+.box-animation {
+  width: 250px;
+  height: 250px;
+  background-color: orangered;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: move;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: red;
+  }
+  20% {
+    background-color: yellow;
+  }
+  50% {
+    background-color: aquamarine;
+  }
+  100% {
+    background-color: violet;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%) rotate(0deg);
+    background-color: purple;
+  }
+
+  50% {
+    transform: translateX(500px)  rotate(100deg);
+  }
+
+  75% {
+    transform: translateX(200px) rotate(180deg);
+    background-color: magenta;
+  }
+
+  100% {
+    transform: translateX(0) rotate(360deg);
+    background-color: purple;
+  }
+}
 /* #endregion */
