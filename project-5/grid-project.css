@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: white;
   box-sizing: border-box;
   font-family: "Lexend", "Poppins", sans-serif;
+  margin: 0;
 }
 
 .body-container {
@@ -17,6 +22,7 @@ header {
   align-items: center;
   padding: 10px 20px;
   font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -40,32 +46,97 @@ button {
   padding: 5px 10px;
 }
 
-ul {
+nav {
   display: flex;
   flex-direction: row;
   gap: 40px;
 }
 
-li {
-  list-style: none;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-li > img {
+a:hover {
+  color: black;
+  opacity: 0.7;
+}
+
+a > img {
   width: 20px;
 }
+/* #region Hamburger */
+.hambuger {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  cursor: pointer;
+}
+.hambuger > .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+/* #endregion */
 /* #endregion */
 /* #region Grid */
 .container {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid black;
-  gap: 10px;
+  grid-template-areas:
+    "a a b"
+    "a a c"
+    "d e c"
+    "d e c"
+    "f g g"
+    "f g g"
+    "h h i";
+  gap: 16px;
+}
+/* #region ID's Grid */
+#eth {
+  grid-area: a;
 }
 
+#alphabet {
+  grid-area: b;
+}
+
+#traveler {
+  grid-area: c;
+}
+
+#cube {
+  grid-area: e;
+}
+
+#astro {
+  grid-area: d;
+}
+
+#cup {
+  grid-area: f;
+}
+
+#insta {
+  grid-area: g;
+}
+
+#foam {
+  grid-area: h;
+}
+/* #endregion */
+#dimensional {
+  grid-area: i;
+}
 .project > img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project {
@@ -82,16 +153,111 @@ li > img {
   opacity: 0;
   font-size: 1.4rem;
   font-family: "Jost";
+  font-weight: 900;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.7),
+    -1px -1px rgba(255, 255, 255, 0.7);
 }
 
 .project:hover .overlated {
   opacity: 1;
   transition: opacity 700ms;
+  cursor: pointer;
 }
 
 .project:hover img {
   filter: blur(1px);
   transition: filter 0.5s ease;
+  cursor: pointer;
+}
+/* #endregion */
+
+/* #region Footer */
+footer {
+  margin: 3rem 0 2rem 0;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+/* #endregion */
+
+/* #region Media Querys */
+/* #region 1015px < Screen */
+@media only screen and (max-width: 1015px) {
+  header {
+    font-size: 0.85rem;
+  }
+
+  nav {
+    gap: 25px;
+  }
+  .container {
+    grid-template-areas:
+      "a a"
+      "a a"
+      "b c"
+      "d e"
+      "d e"
+      "g g"
+      "f h"
+      "i i";
+    column-gap: 0px;
+  }
+
+  .body-container {
+    padding: 1rem;
+  }
+}
+/* #endregion */
+@media only screen and (max-width: 664px) {
+  .body-container {
+    margin-top: 5rem;
+    padding: 1rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hambuger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+  .container {
+    grid-template-areas:
+      "a a"
+      "b b"
+      "c d"
+      "e e"
+      "f f"
+      "g g"
+      "h h"
+      "i i";
+  }
 }
 
+@media only screen and (max-width: 498px) {
+  .body-container {
+    padding: 1rem 0.4rem;
+  }
+
+  button {
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
 /* #endregion */
