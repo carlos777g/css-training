@@ -554,7 +554,14 @@ Give the h1 the following font sizes:
   align-items: center;
   animation-name: move;
   animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  animation-delay: 2s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.box-animation > p {
+  animation-name: move;
 }
 
 @keyframes spin {
@@ -588,7 +595,7 @@ Give the h1 the following font sizes:
   }
 
   50% {
-    transform: translateX(500px)  rotate(100deg);
+    transform: translateX(500px) rotate(100deg);
   }
 
   75% {
@@ -601,4 +608,75 @@ Give the h1 the following font sizes:
     background-color: purple;
   }
 }
+
+/* #region Loader */
+#loader {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 7px solid antiquewhite;
+  border-top-color: #f9b;
+  border-radius: 50%;
+  animation: loader 1s infinite ease-in-out;
+
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(370deg);
+  }
+}
+
+.loader2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bolita {
+  background-color: aquamarine;
+  width: 15px;
+  height: 15px;
+  margin: 0 9px;
+  border-radius: 50%;
+}
+
+.loader2 .bolita:nth-child(1) { 
+  animation: jump 1s infinite ease-in-out;
+}
+
+.loader2 .bolita:nth-child(2) {
+  animation: jump 1s 333ms infinite ease-in-out;
+} 
+
+.loader2 .bolita:nth-child(3) {
+  animation: jump 1s 666ms infinite ease-in-out;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  30% {
+    transform: translateY(-20px) scale(1.4);
+  }
+
+  75% {
+    transform: translateY(0) scale(1);
+  }
+  
+}
+
+
+
+/* #endregion */
 /* #endregion */
