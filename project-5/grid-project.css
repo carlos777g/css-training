@@ -174,7 +174,6 @@ a > img {
   cursor: pointer;
 }
 /* #endregion */
-
 /* #region Footer */
 footer {
   margin: 3rem 0 2rem 0;
@@ -183,7 +182,6 @@ footer {
   font-size: 14px;
 }
 /* #endregion */
-
 /* #region Media Querys */
 /* #region 1015px < Screen */
 @media only screen and (max-width: 1015px) {
