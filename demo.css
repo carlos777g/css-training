@@ -701,7 +701,7 @@ a:visited {
   border-radius: 16px;
   padding: 20px 40px;
   position: relative;
-  
+
   z-index: 2;
   overflow: hidden;
   transition: color 500ms ease;
@@ -729,5 +729,34 @@ a:visited {
   transform: translateX(0);
 }
 
+.toggle {
+  display: none;
+}
+
+.toogle::after {
+  content: "";
+  width: 100px;
+  height: 20px;
+  background-color: rgb(195, 187, 187);
+}
 
 /* #endregion */
+/* #region CSSVariables */
+:root {
+  --brand-color: rgb(169, 85, 1);
+  --standard-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
+}
+.h1-var {
+  color: var(--brand-color);
+  box-shadow: var(--standard-shadow);
+  display: inli;
+}
+.btn-var {
+  background-color: var(--brand-color);
+}
+
+.div-var {
+  border: 3px solid var(--brand-color);
+  padding: 2rem;
+}
+/* endregion */
