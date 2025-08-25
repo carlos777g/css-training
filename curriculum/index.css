@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  background-color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  grid-template-rows: 100vh;
+}
+
+.principal {
+  /* background: linear-gradient(90deg, rgba(255,0,0,1), rgba(0,0,255,1)); */
+  background-color: rgb(84, 84, 191);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 20px;
+  color: white;
+}
+
+.principal > img {
+  width: 65%;
+  border-radius: 16px;
+  height: 25%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.1rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.links {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: 300ms transform;
+}
+
+a:hover {
+  color: rgb(161, 158, 158);
+  /* transform: translateY(-3px); */
+}
+
+a:nth-of-type(2n + 1):hover {
+  transform: rotate(-3deg) translateY(-13px);
+}
+
+a:nth-of-type(2n):hover {
+  transform: rotate(3deg) translateY(-3px);
+}
+
+a > img {
+  width: 30px;
+  margin-right: 1rem;
+}
+
+.presentation {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  width: 60%;
+  background-color: antiquewhite;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 1px 2px 40px rgba(0, 0, 0, 0.3);
+}
+
+.text > p {
+  margin: 0;
+}
+
+h2 {
+  margin: 2rem auto;
+}
+
+
+h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.grade {
+  display: flex;
+  flex-direction: column;
+}
+
+.grade:nth-of-type(2n ) {
+  align-items: flex-end;
+}
+
+.grades {
+  width: 70%;
+  padding: 1.5rem 1rem;
+  margin: 1rem 0;
+  
+}
