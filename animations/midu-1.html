@@ -1,547 +1,1000 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Crónica extensa sobre Spider‑Man y su trabajo en la ciudad de New York: patrullaje, valores, aliados, barrios y retos cotidianos." />
-  <title>Spider‑Man en New York — Crónica completa</title>
-  <style>
-    :root{
-      --bg:#0b1020;       /* fondo noche */
-      --panel:#101935;    /* paneles */
-      --text:#e9edf6;     /* texto principal */
-      --muted:#b7c0d8;    /* texto secundario */
-      --accent:#e11d48;   /* rojo araña */
-      --accent-2:#16a34a; /* verde amigable */
-      --link:#60a5fa;     /* azul enlaces */
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-      --max:1100px;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-      background:linear-gradient(180deg,var(--bg),#0f172a 60%);
-      color:var(--text);
-    }
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(1.2) blur(8px);
-      background:rgba(11,16,32,.75);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 1rem}
-    .topbar{display:flex; align-items:center; gap:.75rem; padding:.75rem 0}
-    .logo{width:38px; height:38px; border-radius:50%; background:radial-gradient(circle at 35% 35%,#ff8fa3, var(--accent)); box-shadow:var(--shadow)}
-    nav{margin-left:auto; display:flex; gap:1rem; flex-wrap:wrap}
-    nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:.35rem .6rem; border-radius:999px; border:1px solid transparent}
-    nav a:hover{border-color:rgba(255,255,255,.15); color:var(--text)}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Crónica extensa sobre Spider‑Man y su trabajo en la ciudad de New York: patrullaje, valores, aliados, barrios y retos cotidianos."
+    />
+    <title>Spider‑Man en New York — Crónica completa</title>
+    <link rel="stylesheet" href="./midu-1.css" />
+    <style>
+      :root {
+        --bg: #0b1020; /* fondo noche */
+        --panel: #101935; /* paneles */
+        --text: #e9edf6; /* texto principal */
+        --muted: #b7c0d8; /* texto secundario */
+        --accent: #e11d48; /* rojo araña */
+        --accent-2: #16a34a; /* verde amigable */
+        --link: #60a5fa; /* azul enlaces */
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+        --max: 1100px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, Noto Sans, sans-serif;
+        background: linear-gradient(180deg, var(--bg), #0f172a 60%);
+        color: var(--text);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: saturate(1.2) blur(8px);
+        background: rgba(11, 16, 32, 0.75);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+      }
+      .logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ff8fa3, var(--accent));
+        box-shadow: var(--shadow);
+      }
+      nav {
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.35rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+      }
+      nav a:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        color: var(--text);
+      }
 
-    .hero{position:relative; overflow:hidden}
-    .hero .grid{display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:center; padding:3.5rem 0}
-    .badge{display:inline-flex; align-items:center; gap:.5rem; background:rgba(225,29,72,.12); color:#fecaca; padding:.25rem .6rem; border-radius:999px; border:1px solid rgba(225,29,72,.35)}
-    h1{font-size:clamp(2rem,2.5vw + 1rem,3.25rem); line-height:1.2; margin:.5rem 0 1rem}
-    .lead{color:var(--muted); font-size:1.1rem}
-    .card{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)}
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 3.5rem 0;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(225, 29, 72, 0.12);
+        color: #fecaca;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        border: 1px solid rgba(225, 29, 72, 0.35);
+      }
+      h1 {
+        font-size: clamp(2rem, 2.5vw + 1rem, 3.25rem);
+        line-height: 1.2;
+        margin: 0.5rem 0 1rem;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        padding: 1rem;
+        box-shadow: var(--shadow);
+      }
 
-    .toc{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:1rem 0}
-    .toc a{display:block; padding:.75rem 1rem; background:#0d1226; border:1px dashed rgba(255,255,255,.12); border-radius:12px; color:var(--link); text-decoration:none}
-    .toc a:hover{background:#0c132d}
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      .toc a {
+        display: block;
+        padding: 0.75rem 1rem;
+        background: #0d1226;
+        border: 1px dashed rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        color: var(--link);
+        text-decoration: none;
+      }
+      .toc a:hover {
+        background: #0c132d;
+      }
 
-    main{max-width:var(--max); margin:0 auto; padding:2rem 1rem 4rem}
-    section{margin:2.5rem 0}
-    section > header h2{font-size:1.6rem; margin:0 0 .4rem}
-    section > header p{margin:.25rem 0; color:var(--muted)}
-    h3{margin:1.2rem 0 .4rem; font-size:1.15rem}
+      main {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+      section {
+        margin: 2.5rem 0;
+      }
+      section > header h2 {
+        font-size: 1.6rem;
+        margin: 0 0 0.4rem;
+      }
+      section > header p {
+        margin: 0.25rem 0;
+        color: var(--muted);
+      }
+      h3 {
+        margin: 1.2rem 0 0.4rem;
+        font-size: 1.15rem;
+      }
 
-    .cols{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
-    .cols-2{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
-    .pill{display:inline-flex; align-items:center; gap:.5rem; padding:.2rem .55rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px; font-size:.85rem; color:var(--muted)}
+      .cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.2rem 0.55rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
 
-    blockquote{margin:1rem 0; padding:1rem 1.25rem; border-left:4px solid var(--accent); background:rgba(255,255,255,.05); border-radius:0 var(--radius) var(--radius) 0}
-    code,kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.95em}
+      blockquote {
+        margin: 1rem 0;
+        padding: 1rem 1.25rem;
+        border-left: 4px solid var(--accent);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0 var(--radius) var(--radius) 0;
+      }
+      code,
+      kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 0.95em;
+      }
 
-    .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem}
-    .stat{background:#0d142b; border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:1rem; text-align:center}
-    .stat b{display:block; font-size:1.6rem}
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+      }
+      .stat {
+        background: #0d142b;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .stat b {
+        display: block;
+        font-size: 1.6rem;
+      }
 
-    .timeline{position:relative; padding-left:1.25rem}
-    .timeline::before{content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(var(--accent),transparent)}
-    .tick{position:relative; padding:.5rem 0 .5rem 1rem}
-    .tick::before{content:""; position:absolute; left:-6px; top:.7rem; width:.7rem; height:.7rem; border-radius:50%; background:var(--accent)}
+      .timeline {
+        position: relative;
+        padding-left: 1.25rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(var(--accent), transparent);
+      }
+      .tick {
+        position: relative;
+        padding: 0.5rem 0 0.5rem 1rem;
+      }
+      .tick::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 0.7rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background: var(--accent);
+      }
 
-    .checklist li{margin:.4rem 0}
-    .kbd{display:inline-block; padding:.15rem .45rem; border-radius:6px; border:1px solid rgba(255,255,255,.2); background:#0c1327}
+      .checklist li {
+        margin: 0.4rem 0;
+      }
+      .kbd {
+        display: inline-block;
+        padding: 0.15rem 0.45rem;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: #0c1327;
+      }
 
-    table{width:100%; border-collapse:collapse; margin:1rem 0; background:#0d142b; border:1px solid rgba(255,255,255,.08); border-radius:12px; overflow:hidden}
-    th,td{padding:.7rem .8rem; border-bottom:1px solid rgba(255,255,255,.06)}
-    th{text-align:left; color:#cbd5e1; font-weight:700; background:#0b1226}
-    tr:last-child td{border-bottom:none}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+        background: #0d142b;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      th,
+      td {
+        padding: 0.7rem 0.8rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      th {
+        text-align: left;
+        color: #cbd5e1;
+        font-weight: 700;
+        background: #0b1226;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
 
-    .grid-cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem}
-    .note{font-size:.95rem; color:var(--muted)}
+      .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+      .note {
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
 
-    .kbd-row{display:flex; gap:.5rem; flex-wrap:wrap}
+      .kbd-row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
 
-    .cta{display:flex; gap:1rem; flex-wrap:wrap; align-items:center}
-    .btn{background:var(--accent); border:none; color:white; padding:.7rem 1rem; border-radius:999px; font-weight:700; text-decoration:none; box-shadow:var(--shadow)}
-    .btn.alt{background:#0d142b; border:1px solid rgba(255,255,255,.15)}
+      .cta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .btn {
+        background: var(--accent);
+        border: none;
+        color: white;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: var(--shadow);
+      }
+      .btn.alt {
+        background: #0d142b;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
 
-    footer{background:#0a0f22; border-top:1px solid rgba(255,255,255,.08)}
-    footer .wrap{padding:2rem 1rem}
+      footer {
+        background: #0a0f22;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      footer .wrap {
+        padding: 2rem 1rem;
+      }
 
-    @media (max-width: 900px){
-      .hero .grid{grid-template-columns:1fr}
-      .cols, .stats, .grid-cards{grid-template-columns:1fr}
-      .cols-2{grid-template-columns:1fr}
-      nav{display:none}
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Spider‑Man en New York: trabajo, ética y rutina",
-    "inLanguage":"es",
-    "author":{"@type":"Person","name":"Vecindario de Queens"},
-    "keywords":["Spider-Man","New York","superhéroe","patrullaje","barrios"],
-    "publisher":{"@type":"Organization","name":"Daily Bugle Vecinal"}
-  }
-  </script>
-</head>
-<body>
-  <header>
-    <div class="wrap topbar">
-      <div class="logo" aria-hidden="true"></div>
-      <strong>Crónica del Amigable Vecino</strong>
-      <nav aria-label="Secciones principales">
-        <a href="#origen">Origen</a>
-        <a href="#barrios">Barrios</a>
-        <a href="#rutina">Rutina</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#aliados">Aliados</a>
-        <a href="#impacto">Impacto</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="wrap grid">
-      <div>
-        <span class="badge">🕷️ Informe Especial</span>
-        <h1>Spider‑Man y su trabajo en la ciudad de New York</h1>
-        <p class="lead">Una mirada detallada —y vecinal— al día a día del trepamuros: su origen, los barrios que cuida, cómo planifica su patrullaje, su tecnología, sus aliados y el impacto real en la vida de millones de neoyorquinos.</p>
-        <div class="cta">
-          <a class="btn" href="#rutina">Ver su jornada típica</a>
-          <a class="btn alt" href="#impacto">Resultados en la ciudad</a>
+      @media (max-width: 900px) {
+        .hero .grid {
+          grid-template-columns: 1fr;
+        }
+        .cols,
+        .stats,
+        .grid-cards {
+          grid-template-columns: 1fr;
+        }
+        .cols-2 {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Spider‑Man en New York: trabajo, ética y rutina",
+        "inLanguage": "es",
+        "author": { "@type": "Person", "name": "Vecindario de Queens" },
+        "keywords": [
+          "Spider-Man",
+          "New York",
+          "superhéroe",
+          "patrullaje",
+          "barrios"
+        ],
+        "publisher": { "@type": "Organization", "name": "Daily Bugle Vecinal" }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="wrap topbar">
+        <div class="logo" aria-hidden="true"></div>
+        <strong>Crónica del Amigable Vecino</strong>
+        <nav aria-label="Secciones principales">
+          <a href="#origen">Origen</a>
+          <a href="#barrios">Barrios</a>
+          <a href="#rutina">Rutina</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#aliados">Aliados</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+    <div id="progress"></div>
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <span class="badge">🕷️ Informe Especial</span>
+          <h1>Spider‑Man y su trabajo en la ciudad de New York</h1>
+          <p class="lead">
+            Una mirada detallada —y vecinal— al día a día del trepamuros: su
+            origen, los barrios que cuida, cómo planifica su patrullaje, su
+            tecnología, sus aliados y el impacto real en la vida de millones de
+            neoyorquinos.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#rutina">Ver su jornada típica</a>
+            <a class="btn alt" href="#impacto">Resultados en la ciudad</a>
+          </div>
         </div>
+        <aside class="card" aria-label="Tabla de contenidos">
+          <h3>Tabla de contenidos</h3>
+          <div class="toc">
+            <a href="#origen">1. Origen responsable</a>
+            <a href="#barrios">2. Barrios y cobertura</a>
+            <a href="#centro-comando">3. Centro de comando</a>
+            <a href="#rutina">4. Rutina de patrullaje</a>
+            <a href="#equipo">5. Traje y gadgets</a>
+            <a href="#protocolos">6. Protocolos de seguridad</a>
+            <a href="#aliados">7. Aliados y coordinación</a>
+            <a href="#villanos">8. Principales amenazas</a>
+            <a href="#impacto">9. Indicadores de impacto</a>
+            <a href="#historias">10. Historias humanas</a>
+            <a href="#etica">11. Ética y límites</a>
+            <a href="#faq">12. Preguntas frecuentes</a>
+          </div>
+          <p class="note">
+            Esta página es un reportaje ficticio con fines educativos y de
+            entretenimiento.
+          </p>
+        </aside>
       </div>
-      <aside class="card" aria-label="Tabla de contenidos">
-        <h3>Tabla de contenidos</h3>
-        <div class="toc">
-          <a href="#origen">1. Origen responsable</a>
-          <a href="#barrios">2. Barrios y cobertura</a>
-          <a href="#centro-comando">3. Centro de comando</a>
-          <a href="#rutina">4. Rutina de patrullaje</a>
-          <a href="#equipo">5. Traje y gadgets</a>
-          <a href="#protocolos">6. Protocolos de seguridad</a>
-          <a href="#aliados">7. Aliados y coordinación</a>
-          <a href="#villanos">8. Principales amenazas</a>
-          <a href="#impacto">9. Indicadores de impacto</a>
-          <a href="#historias">10. Historias humanas</a>
-          <a href="#etica">11. Ética y límites</a>
-          <a href="#faq">12. Preguntas frecuentes</a>
+    </section>
+
+    <main>
+      <section id="origen">
+        <header>
+          <h2>1) Origen responsable</h2>
+          <p>
+            Del laboratorio al skyline: el nacimiento de un héroe con culpa,
+            ingenio y propósito.
+          </p>
+        </header>
+        <div class="cols-2">
+          <article class="card">
+            <h3>De estudiante a vigilante</h3>
+            <p>
+              Peter Parker, un joven de Queens con fascinación por la ciencia,
+              adquirió habilidades arácnidas tras un accidente de laboratorio.
+              La tragedia que siguió —la pérdida de un ser querido— transformó
+              el talento en vocación. La frase “<em
+                >un gran poder conlleva una gran responsabilidad</em
+              >” no es un eslogan: es el eje moral de cada decisión que toma en
+              las calles.
+            </p>
+            <blockquote>
+              “El poder sin responsabilidad es como una telaraña sin anclaje: se
+              rompe con el primer viento.”
+            </blockquote>
+          </article>
+          <article class="card">
+            <h3>Valores que guían su trabajo</h3>
+            <ul class="checklist">
+              <li>
+                Proteger a civiles por encima de la captura de criminales.
+              </li>
+              <li>Minimizar daños colaterales en persecuciones y combates.</li>
+              <li>
+                Transparencia vecinal: hablar con la comunidad cuando es
+                posible.
+              </li>
+              <li>
+                Colaboración con servicios de emergencia y prensa local
+                responsable.
+              </li>
+              <li>
+                Defensa de segundas oportunidades para delincuentes
+                rehabilitables.
+              </li>
+            </ul>
+          </article>
         </div>
-        <p class="note">Esta página es un reportaje ficticio con fines educativos y de entretenimiento.</p>
-      </aside>
-    </div>
-  </section>
+      </section>
 
-  <main>
-    <section id="origen">
-      <header>
-        <h2>1) Origen responsable</h2>
-        <p>Del laboratorio al skyline: el nacimiento de un héroe con culpa, ingenio y propósito.</p>
-      </header>
-      <div class="cols-2">
+      <section id="barrios">
+        <header>
+          <h2>2) Barrios y cobertura</h2>
+          <p>
+            Spider‑Man es un héroe de <strong>proximidad</strong>. Su ventaja:
+            conocer el terreno. Sus telarañas son más útiles cuando sabe qué
+            esquina dobla el viento.
+          </p>
+        </header>
+        <div class="grid-cards">
+          <article class="card">
+            <h3>Queens</h3>
+            <p>
+              Su hogar. Aquí escucha nombres, reconoce comercios y sabe dónde la
+              red de transporte falla a menudo. Suele empezar y terminar su
+              patrullaje en este distrito.
+            </p>
+            <span class="pill">Base emocional</span>
+            <span class="pill">Rutas escolares</span>
+          </article>
+          <article class="card">
+            <h3>Manhattan</h3>
+            <p>
+              Rascacielos ideales para el balanceo. Alta densidad de incidentes
+              por el flujo de turistas y oficinas. Zona crítica: Midtown y el
+              área financiera.
+            </p>
+            <span class="pill">Rascacielos</span>
+            <span class="pill">Turismo</span>
+          </article>
+          <article class="card">
+            <h3>Brooklyn</h3>
+            <p>
+              Puentes estratégicos, vecindarios con comunidad organizada.
+              Patrullaje compartido con otros héroes emergentes.
+            </p>
+            <span class="pill">Puentes</span>
+            <span class="pill">Cooperación vecinal</span>
+          </article>
+          <article class="card">
+            <h3>Bronx</h3>
+            <p>
+              Atención a crimen organizado y robos de transporte. Spider‑Man
+              prioriza apoyar a jóvenes y programas comunitarios.
+            </p>
+            <span class="pill">Prevención</span>
+            <span class="pill">Redes juveniles</span>
+          </article>
+          <article class="card">
+            <h3>Staten Island</h3>
+            <p>
+              Menor altura de edificios: patrullaje mixto a pie y en azoteas.
+              Apoyo frecuente a guardacostas.
+            </p>
+            <span class="pill">Costero</span>
+            <span class="pill">Respuesta mixta</span>
+          </article>
+          <article class="card">
+            <h3>Long Island & perímetro</h3>
+            <p>
+              Operaciones puntuales cuando amenazas se desplazan fuera de la
+              ciudad. Coordinación con autoridades estatales.
+            </p>
+            <span class="pill">Perímetro</span>
+            <span class="pill">Coordinación</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="centro-comando">
+        <header>
+          <h2>3) Centro de comando</h2>
+          <p>
+            Una azotea, una antena y un escáner policial: suficientes para
+            montar un “centro” que cambia cada noche.
+          </p>
+        </header>
+        <div class="cols-2">
+          <article class="card">
+            <h3>Señales que escucha</h3>
+            <ul>
+              <li>
+                Frecuencias de emergencia: reportes 10‑codes y boletines en
+                tiempo real.
+              </li>
+              <li>
+                Alertas ciudadanas: mensajes de texto en grupos vecinales y apps
+                públicas.
+              </li>
+              <li>
+                Patrones climáticos: el viento define relieves y rutas de
+                balanceo.
+              </li>
+              <li>
+                Tráfico: embotellamientos que requieren rescates o limpieza de
+                accidentes.
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Panel táctico improvisado</h3>
+            <p>
+              Con un teléfono resistente y un par de lentes, Spider‑Man traza
+              zonas calientes y rutas de acceso. Si la noche se complica, rehace
+              el mapa: la ciudad es dinámica y la red se adapta.
+            </p>
+            <div class="kbd-row">
+              <span class="kbd">Mapa</span>
+              <span class="kbd">Alertas</span>
+              <span class="kbd">Rutas</span>
+              <span class="kbd">Clima</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="rutina">
+        <header>
+          <h2>4) Rutina de patrullaje</h2>
+          <p>Así luce una jornada típica cuando no hay crisis multiversal.</p>
+        </header>
+        <div class="cols-2">
+          <article class="card">
+            <h3>Horario estimado</h3>
+            <div class="timeline">
+              <div class="tick">
+                <strong>06:00</strong> — Amanecer en Queens, estiramientos y
+                verificación de cartuchos de telaraña.
+              </div>
+              <div class="tick">
+                <strong>07:00</strong> — Balanceo hacia Manhattan; apoyo en
+                incidentes de hora pico.
+              </div>
+              <div class="tick">
+                <strong>10:30</strong> — Patrullaje de precisión en zonas
+                escolares y hospitales.
+              </div>
+              <div class="tick">
+                <strong>13:00</strong> — Reabastecimiento, mantenimiento rápido
+                del traje.
+              </div>
+              <div class="tick">
+                <strong>16:00</strong> — Vigilancia de puentes y túneles;
+                prevención de robos.
+              </div>
+              <div class="tick">
+                <strong>20:00</strong> — Ronda nocturna; verificación de barrios
+                con menor iluminación.
+              </div>
+              <div class="tick">
+                <strong>23:30</strong> — Informe personal, bitácora y regreso
+                discreto.
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Indicadores operativos</h3>
+            <div class="stats">
+              <div class="stat"><b>120+</b> Intervenciones mensuales</div>
+              <div class="stat"><b>95%</b> Casos sin heridos civiles</div>
+              <div class="stat"><b>~3 min</b> Tiempo medio de respuesta</div>
+              <div class="stat">
+                <b>0</b> Derrotas por tráfico (telaraña &gt; embotellamiento)
+              </div>
+            </div>
+            <p class="note">Datos ficticios con fines narrativos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="equipo">
+        <header>
+          <h2>5) Traje y gadgets</h2>
+          <p>Ingeniería aplicada a la movilidad urbana.</p>
+        </header>
+        <table aria-label="Resumen de equipo">
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Función</th>
+              <th>Ventaja urbana</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lanzatelarañas</td>
+              <td>Dispara fibras adhesivas de alta resistencia.</td>
+              <td>Salva distancia vertical entre edificios en segundos.</td>
+            </tr>
+            <tr>
+              <td>Telaraña inteligente</td>
+              <td>Modos: red, línea, paracaídas, espuma.</td>
+              <td>Adapta contención según amenaza y entorno.</td>
+            </tr>
+            <tr>
+              <td>Máscara con HUD</td>
+              <td>Filtros, radio y telemetría básica.</td>
+              <td>Mejor visibilidad nocturna y análisis rápido.</td>
+            </tr>
+            <tr>
+              <td>Suela magnética</td>
+              <td>Adherencia adicional en superficies complejas.</td>
+              <td>Estabilidad en resbalones y lluvia.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="grid-cards">
+          <article class="card">
+            <h3>Fórmula de telaraña (resumen)</h3>
+            <p>
+              Polímeros experimentales con memoria de forma y curado rápido.
+              Diseñada para degradarse sin contaminar.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Diseño del traje</h3>
+            <p>
+              Paneles ligeros, refuerzos en hombros y espalda, elasticidad para
+              acrobacias y costuras discretas para no engancharse.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Plan B</h3>
+            <p>
+              Cartuchos de reserva, cuchillas de seguridad para cortar telaraña
+              y un localizador oculto por si el traje se daña.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="protocolos">
+        <header>
+          <h2>6) Protocolos de seguridad</h2>
+          <p>
+            Cuando cada segundo cuenta, la regla es simple:
+            <strong>cuidar primero a la gente</strong>.
+          </p>
+        </header>
+        <div class="cols">
+          <article class="card">
+            <h3>Escena segura</h3>
+            <ol>
+              <li>Crear perímetro con telaraña y desviar tráfico.</li>
+              <li>Retirar civiles de zonas de riesgo inmediato.</li>
+              <li>Identificar a la amenaza y su movilidad.</li>
+              <li>Solicitar apoyo si la escala crece.</li>
+            </ol>
+          </article>
+          <article class="card">
+            <h3>Persecuciones</h3>
+            <p>
+              Balanceo a media altura para evitar caídas de objetos; redes de
+              contención en esquinas peligrosas; coordinación con semáforos.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Rescates verticales</h3>
+            <p>
+              Uso de anclajes dobles, aseguramiento de víctima y descenso
+              controlado con líneas redundantes.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="aliados">
+        <header>
+          <h2>7) Aliados y coordinación</h2>
+          <p>
+            De vecinos a Vengadores: el trabajo en equipo multiplica resultados.
+          </p>
+        </header>
+        <div class="cols-2">
+          <article class="card">
+            <h3>Red local</h3>
+            <ul>
+              <li>
+                <strong>Servicios de emergencia:</strong> bomberos, paramédicos
+                y policía.
+              </li>
+              <li>
+                <strong>Comunidad:</strong> comerciantes, porteros y voluntarios
+                de barrio.
+              </li>
+              <li>
+                <strong>Prensa responsable:</strong> evita pánico y difunde
+                rutas seguras.
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Coordinación táctica</h3>
+            <p>
+              Señales manuales, mensajes breves y puntos de encuentro. Si llegan
+              refuerzos de alto nivel, cede el mando a quien tenga mejor
+              información del momento.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="villanos">
+        <header>
+          <h2>8) Principales amenazas</h2>
+          <p>No es la lista completa, pero sí un mapa de riesgos típicos.</p>
+        </header>
+        <table aria-label="Riesgos frecuentes">
+          <thead>
+            <tr>
+              <th>Riesgo</th>
+              <th>Descripción</th>
+              <th>Estrategia de contención</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Crimen callejero</td>
+              <td>Robos, asaltos, vandalismo.</td>
+              <td>
+                Disuasión rápida, inmovilización con red, entrega a autoridades.
+              </td>
+            </tr>
+            <tr>
+              <td>Villanos tecnológicos</td>
+              <td>Equipos con armas, drones o exotrajes.</td>
+              <td>Neutralizar fuente de energía, telaraña a articulaciones.</td>
+            </tr>
+            <tr>
+              <td>Amenazas metahumanas</td>
+              <td>Fuerza o capacidades fuera de norma.</td>
+              <td>
+                Evacuación prioritaria y contención con apoyo especializado.
+              </td>
+            </tr>
+            <tr>
+              <td>Desastres urbanos</td>
+              <td>Incendios, derrumbes, tormentas.</td>
+              <td>
+                Rutas de evacuación, rescate vertical, señalización con
+                telaraña.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="impacto">
+        <header>
+          <h2>9) Indicadores de impacto</h2>
+          <p>Lo que se mide, mejora —incluso si usas máscara.</p>
+        </header>
+        <div class="cols-2">
+          <article class="card">
+            <h3>Resultados observables</h3>
+            <ul>
+              <li>Reducción de delitos oportunistas en zonas patrulladas.</li>
+              <li>Reacción más rápida ante accidentes en puentes y túneles.</li>
+              <li>Mayor confianza vecinal en horarios nocturnos.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Métricas comunitarias</h3>
+            <p>
+              Encuestas a vecinos, reportes de servicios de emergencia y
+              bitácoras públicas anónimas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="historias">
+        <header>
+          <h2>10) Historias humanas</h2>
+          <p>La ciudad no son edificios; es la gente que los habita.</p>
+        </header>
+        <div class="grid-cards">
+          <article class="card">
+            <h3>El repartidor de la 34</h3>
+            <p>
+              Una caída de andamio en Midtown quedó en “susto” gracias a una red
+              colocada en segundos. El repartidor volvió a su ruta esa misma
+              tarde.
+            </p>
+          </article>
+          <article class="card">
+            <h3>La señora del bodega</h3>
+            <p>
+              Un intento de robo terminó en una conversación: el ladrón aceptó
+              entregar el arma y recibió acompañamiento a un programa social.
+            </p>
+          </article>
+          <article class="card">
+            <h3>La clase de ciencias</h3>
+            <p>
+              Una breve charla sobre seguridad, curiosidad científica y cuidado
+              del barrio inspiró a una generación a mirar hacia arriba… y
+              también a ambos lados al cruzar.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="etica">
+        <header>
+          <h2>11) Ética, identidad y límites</h2>
+          <p>Ser héroe sin dejar de ser humano.</p>
+        </header>
         <article class="card">
-          <h3>De estudiante a vigilante</h3>
-          <p>Peter Parker, un joven de Queens con fascinación por la ciencia, adquirió habilidades arácnidas tras un accidente de laboratorio. La tragedia que siguió —la pérdida de un ser querido— transformó el talento en vocación. La frase “<em>un gran poder conlleva una gran responsabilidad</em>” no es un eslogan: es el eje moral de cada decisión que toma en las calles.</p>
-          <blockquote>
-            “El poder sin responsabilidad es como una telaraña sin anclaje: se rompe con el primer viento.”
-          </blockquote>
+          <h3>Privacidad y confianza</h3>
+          <p>
+            Spider‑Man protege su identidad para proteger a su círculo. La
+            confianza con la comunidad se construye con acciones constantes:
+            llegar, ayudar y desaparecer sin pedir aplausos.
+          </p>
+          <h3>Uso proporcional de la fuerza</h3>
+          <p>
+            Evita golpes innecesarios; prefiere la inmovilización con telaraña.
+            La burla ocasional no busca humillar: distrae para reducir riesgos.
+          </p>
+          <h3>Responsabilidad interseccional</h3>
+          <p>
+            La seguridad no es solo atrapar villanos: es cuidar a quienes la
+            ciudad suele ignorar. Spider‑Man conoce esos huecos y los teje con
+            su red.
+          </p>
         </article>
-        <article class="card">
-          <h3>Valores que guían su trabajo</h3>
-          <ul class="checklist">
-            <li>Proteger a civiles por encima de la captura de criminales.</li>
-            <li>Minimizar daños colaterales en persecuciones y combates.</li>
-            <li>Transparencia vecinal: hablar con la comunidad cuando es posible.</li>
-            <li>Colaboración con servicios de emergencia y prensa local responsable.</li>
-            <li>Defensa de segundas oportunidades para delincuentes rehabilitables.</li>
-          </ul>
-        </article>
+      </section>
+
+      <section id="faq">
+        <header>
+          <h2>12) Preguntas frecuentes</h2>
+          <p>Respuestas cortas para dudas comunes.</p>
+        </header>
+        <details class="card">
+          <summary>
+            <strong>¿Cómo se mueve tan rápido por Manhattan?</strong>
+          </summary>
+          <p>
+            Usa el efecto péndulo: cuanto más alto el anclaje, mayor energía
+            acumulada y velocidad. Conoce rutas de viento y calles con
+            “corredores” de edificios.
+          </p>
+        </details>
+        <details class="card">
+          <summary><strong>¿No se agota la telaraña?</strong></summary>
+          <p>
+            Sí. Administra cartuchos y usa modos de ahorro —líneas finas para
+            moverse; redes densas solo en contención.
+          </p>
+        </details>
+        <details class="card">
+          <summary><strong>¿Trabaja solo?</strong></summary>
+          <p>
+            Frecuentemente sí, pero coopera con equipos cuando el riesgo lo
+            amerita. La coordinación salva tiempo y vidas.
+          </p>
+        </details>
+        <details class="card">
+          <summary>
+            <strong>¿Por qué New York necesita a Spider‑Man?</strong>
+          </summary>
+          <p>
+            Porque alguien que conoce el barrio puede llegar antes que
+            cualquiera. Y a veces, unos segundos cambian todo.
+          </p>
+        </details>
+      </section>
+
+      <section id="extra" aria-labelledby="extra-title">
+        <header>
+          <h2 id="extra-title">Anexos y curiosidades</h2>
+          <p>Pequeños datos para grandes charlas.</p>
+        </header>
+        <div class="cols">
+          <article class="card">
+            <h3>Glosario urbano</h3>
+            <ul>
+              <li>
+                <strong>Balanceo:</strong> Técnica de desplazamiento mediante
+                anclajes de telaraña.
+              </li>
+              <li>
+                <strong>Red de contención:</strong> Malla amplia para detener
+                caídas u objetos.
+              </li>
+              <li>
+                <strong>Punto muerto:</strong> Zona sin edificios altos;
+                requiere ruta alternativa.
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Consejos de seguridad para civiles</h3>
+            <ul>
+              <li>
+                No corras hacia la pelea. Aléjate en ángulo y busca cobertura.
+              </li>
+              <li>
+                Sigue instrucciones cortas: “<em>salida</em>”,
+                “<em>espera</em>”, “<em>red</em>”.
+              </li>
+              <li>
+                Si quedas pegado en una red, ¡no la cortes! Espera a que se
+                degrade o a asistencia.
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Telaraña y clima</h3>
+            <p>
+              La lluvia reduce el agarre en superficies lisas, por lo que
+              Spider‑Man elige anclajes texturizados y refuerza nudos en
+              esquinas.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Hecho con admiración por el <em>amigable vecino</em> y con amor por
+          New York. Esta página es fan‑made.
+        </p>
+        <p class="note">
+          © Vecindario de Queens. Personaje y marcas pertenecen a sus
+          respectivos dueños. Contenido educativo sin fines de lucro.
+        </p>
       </div>
-    </section>
-
-    <section id="barrios">
-      <header>
-        <h2>2) Barrios y cobertura</h2>
-        <p>Spider‑Man es un héroe de <strong>proximidad</strong>. Su ventaja: conocer el terreno. Sus telarañas son más útiles cuando sabe qué esquina dobla el viento.</p>
-      </header>
-      <div class="grid-cards">
-        <article class="card">
-          <h3>Queens</h3>
-          <p>Su hogar. Aquí escucha nombres, reconoce comercios y sabe dónde la red de transporte falla a menudo. Suele empezar y terminar su patrullaje en este distrito.</p>
-          <span class="pill">Base emocional</span>
-          <span class="pill">Rutas escolares</span>
-        </article>
-        <article class="card">
-          <h3>Manhattan</h3>
-          <p>Rascacielos ideales para el balanceo. Alta densidad de incidentes por el flujo de turistas y oficinas. Zona crítica: Midtown y el área financiera.</p>
-          <span class="pill">Rascacielos</span>
-          <span class="pill">Turismo</span>
-        </article>
-        <article class="card">
-          <h3>Brooklyn</h3>
-          <p>Puentes estratégicos, vecindarios con comunidad organizada. Patrullaje compartido con otros héroes emergentes.</p>
-          <span class="pill">Puentes</span>
-          <span class="pill">Cooperación vecinal</span>
-        </article>
-        <article class="card">
-          <h3>Bronx</h3>
-          <p>Atención a crimen organizado y robos de transporte. Spider‑Man prioriza apoyar a jóvenes y programas comunitarios.</p>
-          <span class="pill">Prevención</span>
-          <span class="pill">Redes juveniles</span>
-        </article>
-        <article class="card">
-          <h3>Staten Island</h3>
-          <p>Menor altura de edificios: patrullaje mixto a pie y en azoteas. Apoyo frecuente a guardacostas.</p>
-          <span class="pill">Costero</span>
-          <span class="pill">Respuesta mixta</span>
-        </article>
-        <article class="card">
-          <h3>Long Island & perímetro</h3>
-          <p>Operaciones puntuales cuando amenazas se desplazan fuera de la ciudad. Coordinación con autoridades estatales.</p>
-          <span class="pill">Perímetro</span>
-          <span class="pill">Coordinación</span>
-        </article>
-      </div>
-    </section>
-
-    <section id="centro-comando">
-      <header>
-        <h2>3) Centro de comando</h2>
-        <p>Una azotea, una antena y un escáner policial: suficientes para montar un “centro” que cambia cada noche.</p>
-      </header>
-      <div class="cols-2">
-        <article class="card">
-          <h3>Señales que escucha</h3>
-          <ul>
-            <li>Frecuencias de emergencia: reportes 10‑codes y boletines en tiempo real.</li>
-            <li>Alertas ciudadanas: mensajes de texto en grupos vecinales y apps públicas.</li>
-            <li>Patrones climáticos: el viento define relieves y rutas de balanceo.</li>
-            <li>Tráfico: embotellamientos que requieren rescates o limpieza de accidentes.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Panel táctico improvisado</h3>
-          <p>Con un teléfono resistente y un par de lentes, Spider‑Man traza zonas calientes y rutas de acceso. Si la noche se complica, rehace el mapa: la ciudad es dinámica y la red se adapta.</p>
-          <div class="kbd-row">
-            <span class="kbd">Mapa</span>
-            <span class="kbd">Alertas</span>
-            <span class="kbd">Rutas</span>
-            <span class="kbd">Clima</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="rutina">
-      <header>
-        <h2>4) Rutina de patrullaje</h2>
-        <p>Así luce una jornada típica cuando no hay crisis multiversal.</p>
-      </header>
-      <div class="cols-2">
-        <article class="card">
-          <h3>Horario estimado</h3>
-          <div class="timeline">
-            <div class="tick"><strong>06:00</strong> — Amanecer en Queens, estiramientos y verificación de cartuchos de telaraña.</div>
-            <div class="tick"><strong>07:00</strong> — Balanceo hacia Manhattan; apoyo en incidentes de hora pico.</div>
-            <div class="tick"><strong>10:30</strong> — Patrullaje de precisión en zonas escolares y hospitales.</div>
-            <div class="tick"><strong>13:00</strong> — Reabastecimiento, mantenimiento rápido del traje.</div>
-            <div class="tick"><strong>16:00</strong> — Vigilancia de puentes y túneles; prevención de robos.</div>
-            <div class="tick"><strong>20:00</strong> — Ronda nocturna; verificación de barrios con menor iluminación.</div>
-            <div class="tick"><strong>23:30</strong> — Informe personal, bitácora y regreso discreto.</div>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Indicadores operativos</h3>
-          <div class="stats">
-            <div class="stat"><b>120+</b> Intervenciones mensuales</div>
-            <div class="stat"><b>95%</b> Casos sin heridos civiles</div>
-            <div class="stat"><b>~3 min</b> Tiempo medio de respuesta</div>
-            <div class="stat"><b>0</b> Derrotas por tráfico (telaraña &gt; embotellamiento)</div>
-          </div>
-          <p class="note">Datos ficticios con fines narrativos.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="equipo">
-      <header>
-        <h2>5) Traje y gadgets</h2>
-        <p>Ingeniería aplicada a la movilidad urbana.</p>
-      </header>
-      <table aria-label="Resumen de equipo">
-        <thead>
-          <tr>
-            <th>Elemento</th>
-            <th>Función</th>
-            <th>Ventaja urbana</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Lanzatelarañas</td>
-            <td>Dispara fibras adhesivas de alta resistencia.</td>
-            <td>Salva distancia vertical entre edificios en segundos.</td>
-          </tr>
-          <tr>
-            <td>Telaraña inteligente</td>
-            <td>Modos: red, línea, paracaídas, espuma.</td>
-            <td>Adapta contención según amenaza y entorno.</td>
-          </tr>
-          <tr>
-            <td>Máscara con HUD</td>
-            <td>Filtros, radio y telemetría básica.</td>
-            <td>Mejor visibilidad nocturna y análisis rápido.</td>
-          </tr>
-          <tr>
-            <td>Suela magnética</td>
-            <td>Adherencia adicional en superficies complejas.</td>
-            <td>Estabilidad en resbalones y lluvia.</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="grid-cards">
-        <article class="card">
-          <h3>Fórmula de telaraña (resumen)</h3>
-          <p>Polímeros experimentales con memoria de forma y curado rápido. Diseñada para degradarse sin contaminar.</p>
-        </article>
-        <article class="card">
-          <h3>Diseño del traje</h3>
-          <p>Paneles ligeros, refuerzos en hombros y espalda, elasticidad para acrobacias y costuras discretas para no engancharse.</p>
-        </article>
-        <article class="card">
-          <h3>Plan B</h3>
-          <p>Cartuchos de reserva, cuchillas de seguridad para cortar telaraña y un localizador oculto por si el traje se daña.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="protocolos">
-      <header>
-        <h2>6) Protocolos de seguridad</h2>
-        <p>Cuando cada segundo cuenta, la regla es simple: <strong>cuidar primero a la gente</strong>.</p>
-      </header>
-      <div class="cols">
-        <article class="card">
-          <h3>Escena segura</h3>
-          <ol>
-            <li>Crear perímetro con telaraña y desviar tráfico.</li>
-            <li>Retirar civiles de zonas de riesgo inmediato.</li>
-            <li>Identificar a la amenaza y su movilidad.</li>
-            <li>Solicitar apoyo si la escala crece.</li>
-          </ol>
-        </article>
-        <article class="card">
-          <h3>Persecuciones</h3>
-          <p>Balanceo a media altura para evitar caídas de objetos; redes de contención en esquinas peligrosas; coordinación con semáforos.</p>
-        </article>
-        <article class="card">
-          <h3>Rescates verticales</h3>
-          <p>Uso de anclajes dobles, aseguramiento de víctima y descenso controlado con líneas redundantes.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="aliados">
-      <header>
-        <h2>7) Aliados y coordinación</h2>
-        <p>De vecinos a Vengadores: el trabajo en equipo multiplica resultados.</p>
-      </header>
-      <div class="cols-2">
-        <article class="card">
-          <h3>Red local</h3>
-          <ul>
-            <li><strong>Servicios de emergencia:</strong> bomberos, paramédicos y policía.</li>
-            <li><strong>Comunidad:</strong> comerciantes, porteros y voluntarios de barrio.</li>
-            <li><strong>Prensa responsable:</strong> evita pánico y difunde rutas seguras.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Coordinación táctica</h3>
-          <p>Señales manuales, mensajes breves y puntos de encuentro. Si llegan refuerzos de alto nivel, cede el mando a quien tenga mejor información del momento.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="villanos">
-      <header>
-        <h2>8) Principales amenazas</h2>
-        <p>No es la lista completa, pero sí un mapa de riesgos típicos.</p>
-      </header>
-      <table aria-label="Riesgos frecuentes">
-        <thead>
-          <tr>
-            <th>Riesgo</th>
-            <th>Descripción</th>
-            <th>Estrategia de contención</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Crimen callejero</td>
-            <td>Robos, asaltos, vandalismo.</td>
-            <td>Disuasión rápida, inmovilización con red, entrega a autoridades.</td>
-          </tr>
-          <tr>
-            <td>Villanos tecnológicos</td>
-            <td>Equipos con armas, drones o exotrajes.</td>
-            <td>Neutralizar fuente de energía, telaraña a articulaciones.</td>
-          </tr>
-          <tr>
-            <td>Amenazas metahumanas</td>
-            <td>Fuerza o capacidades fuera de norma.</td>
-            <td>Evacuación prioritaria y contención con apoyo especializado.</td>
-          </tr>
-          <tr>
-            <td>Desastres urbanos</td>
-            <td>Incendios, derrumbes, tormentas.</td>
-            <td>Rutas de evacuación, rescate vertical, señalización con telaraña.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="impacto">
-      <header>
-        <h2>9) Indicadores de impacto</h2>
-        <p>Lo que se mide, mejora —incluso si usas máscara.</p>
-      </header>
-      <div class="cols-2">
-        <article class="card">
-          <h3>Resultados observables</h3>
-          <ul>
-            <li>Reducción de delitos oportunistas en zonas patrulladas.</li>
-            <li>Reacción más rápida ante accidentes en puentes y túneles.</li>
-            <li>Mayor confianza vecinal en horarios nocturnos.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Métricas comunitarias</h3>
-          <p>Encuestas a vecinos, reportes de servicios de emergencia y bitácoras públicas anónimas.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="historias">
-      <header>
-        <h2>10) Historias humanas</h2>
-        <p>La ciudad no son edificios; es la gente que los habita.</p>
-      </header>
-      <div class="grid-cards">
-        <article class="card">
-          <h3>El repartidor de la 34</h3>
-          <p>Una caída de andamio en Midtown quedó en “susto” gracias a una red colocada en segundos. El repartidor volvió a su ruta esa misma tarde.</p>
-        </article>
-        <article class="card">
-          <h3>La señora del bodega</h3>
-          <p>Un intento de robo terminó en una conversación: el ladrón aceptó entregar el arma y recibió acompañamiento a un programa social.</p>
-        </article>
-        <article class="card">
-          <h3>La clase de ciencias</h3>
-          <p>Una breve charla sobre seguridad, curiosidad científica y cuidado del barrio inspiró a una generación a mirar hacia arriba… y también a ambos lados al cruzar.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="etica">
-      <header>
-        <h2>11) Ética, identidad y límites</h2>
-        <p>Ser héroe sin dejar de ser humano.</p>
-      </header>
-      <article class="card">
-        <h3>Privacidad y confianza</h3>
-        <p>Spider‑Man protege su identidad para proteger a su círculo. La confianza con la comunidad se construye con acciones constantes: llegar, ayudar y desaparecer sin pedir aplausos.</p>
-        <h3>Uso proporcional de la fuerza</h3>
-        <p>Evita golpes innecesarios; prefiere la inmovilización con telaraña. La burla ocasional no busca humillar: distrae para reducir riesgos.</p>
-        <h3>Responsabilidad interseccional</h3>
-        <p>La seguridad no es solo atrapar villanos: es cuidar a quienes la ciudad suele ignorar. Spider‑Man conoce esos huecos y los teje con su red.</p>
-      </article>
-    </section>
-
-    <section id="faq">
-      <header>
-        <h2>12) Preguntas frecuentes</h2>
-        <p>Respuestas cortas para dudas comunes.</p>
-      </header>
-      <details class="card">
-        <summary><strong>¿Cómo se mueve tan rápido por Manhattan?</strong></summary>
-        <p>Usa el efecto péndulo: cuanto más alto el anclaje, mayor energía acumulada y velocidad. Conoce rutas de viento y calles con “corredores” de edificios.</p>
-      </details>
-      <details class="card">
-        <summary><strong>¿No se agota la telaraña?</strong></summary>
-        <p>Sí. Administra cartuchos y usa modos de ahorro —líneas finas para moverse; redes densas solo en contención.</p>
-      </details>
-      <details class="card">
-        <summary><strong>¿Trabaja solo?</strong></summary>
-        <p>Frecuentemente sí, pero coopera con equipos cuando el riesgo lo amerita. La coordinación salva tiempo y vidas.</p>
-      </details>
-      <details class="card">
-        <summary><strong>¿Por qué New York necesita a Spider‑Man?</strong></summary>
-        <p>Porque alguien que conoce el barrio puede llegar antes que cualquiera. Y a veces, unos segundos cambian todo.</p>
-      </details>
-    </section>
-
-    <section id="extra" aria-labelledby="extra-title">
-      <header>
-        <h2 id="extra-title">Anexos y curiosidades</h2>
-        <p>Pequeños datos para grandes charlas.</p>
-      </header>
-      <div class="cols">
-        <article class="card">
-          <h3>Glosario urbano</h3>
-          <ul>
-            <li><strong>Balanceo:</strong> Técnica de desplazamiento mediante anclajes de telaraña.</li>
-            <li><strong>Red de contención:</strong> Malla amplia para detener caídas u objetos.</li>
-            <li><strong>Punto muerto:</strong> Zona sin edificios altos; requiere ruta alternativa.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Consejos de seguridad para civiles</h3>
-          <ul>
-            <li>No corras hacia la pelea. Aléjate en ángulo y busca cobertura.</li>
-            <li>Sigue instrucciones cortas: “<em>salida</em>”, “<em>espera</em>”, “<em>red</em>”.</li>
-            <li>Si quedas pegado en una red, ¡no la cortes! Espera a que se degrade o a asistencia.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Telaraña y clima</h3>
-          <p>La lluvia reduce el agarre en superficies lisas, por lo que Spider‑Man elige anclajes texturizados y refuerza nudos en esquinas.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>Hecho con admiración por el <em>amigable vecino</em> y con amor por New York. Esta página es fan‑made.</p>
-      <p class="note">© Vecindario de Queens. Personaje y marcas pertenecen a sus respectivos dueños. Contenido educativo sin fines de lucro.</p>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

@@ -2,3 +2,19 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+#progress {
+    position: fixed;
+    bottom:0;
+    width: 0%;
+    background-color: red;
+    height: 1em;
+
+    animation: progress-grow auto linear;
+    animation-timeline: scroll(root block);
+}
+
+@keyframes progress-grow {
+    from  {width: 0%}
+    to {width: 100%}
+}
